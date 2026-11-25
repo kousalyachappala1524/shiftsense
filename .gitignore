@@ -1,0 +1,13 @@
+# secrets: never commit API keys
+.streamlit/secrets.toml
+.env
+
+# local environment
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# test / tooling caches
+.pytest_cache/
+*.zip

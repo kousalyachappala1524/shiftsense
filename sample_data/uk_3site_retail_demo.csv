@@ -1,0 +1,93 @@
+Employee number;Employee;Department;Employee group;Date of birth;Contract;Contracted hours;48h opt-out;Date;From;To;Break;Wage
+LL001;Sophie Turner;Covent Garden;Store Manager;02/05/1988;Permanent;45;Yes;30/11/2026;07:30;17:00;30;17.80
+LL001;Sophie Turner;Covent Garden;Store Manager;02/05/1988;Permanent;45;Yes;01/12/2026;07:30;17:00;30;17.80
+LL001;Sophie Turner;Covent Garden;Store Manager;02/05/1988;Permanent;45;Yes;02/12/2026;10:00;19:30;30;17.80
+LL001;Sophie Turner;Covent Garden;Store Manager;02/05/1988;Permanent;45;Yes;04/12/2026;10:00;19:30;30;17.80
+LL001;Sophie Turner;Covent Garden;Store Manager;02/05/1988;Permanent;45;Yes;05/12/2026;07:30;17:00;30;17.80
+LL002;Daniel Okafor;Covent Garden;Assistant Manager;21/09/1993;Permanent;40;No;01/12/2026;13:30;22:00;30;15.20
+LL002;Daniel Okafor;Covent Garden;Assistant Manager;21/09/1993;Permanent;40;No;02/12/2026;10:00;18:30;30;15.20
+LL002;Daniel Okafor;Covent Garden;Assistant Manager;21/09/1993;Permanent;40;No;03/12/2026;13:30;22:00;30;15.20
+LL002;Daniel Okafor;Covent Garden;Assistant Manager;21/09/1993;Permanent;40;No;05/12/2026;13:30;22:00;30;15.20
+LL002;Daniel Okafor;Covent Garden;Assistant Manager;21/09/1993;Permanent;40;No;06/12/2026;11:00;19:00;30;15.20
+LL003;Hannah Price;Covent Garden;Sales Advisor;11/01/1998;Permanent;37.5;No;30/11/2026;10:00;18:30;30;12.95
+LL003;Hannah Price;Covent Garden;Sales Advisor;11/01/1998;Permanent;37.5;No;01/12/2026;10:00;18:30;30;12.95
+LL003;Hannah Price;Covent Garden;Sales Advisor;11/01/1998;Permanent;37.5;No;03/12/2026;10:00;18:30;30;12.95
+LL003;Hannah Price;Covent Garden;Sales Advisor;11/01/1998;Permanent;37.5;No;05/12/2026;10:00;18:30;30;12.95
+LL003;Hannah Price;Covent Garden;Sales Advisor;11/01/1998;Permanent;37.5;No;06/12/2026;11:30;17:30;0;12.95
+LL004;Liam Walsh;Covent Garden;Sales Advisor;30/07/2001;Permanent;30;No;30/11/2026;13:30;22:00;30;12.95
+LL004;Liam Walsh;Covent Garden;Sales Advisor;30/07/2001;Permanent;30;No;02/12/2026;13:30;22:00;30;12.95
+LL004;Liam Walsh;Covent Garden;Sales Advisor;30/07/2001;Permanent;30;No;04/12/2026;10:00;18:30;30;12.95
+LL004;Liam Walsh;Covent Garden;Sales Advisor;30/07/2001;Permanent;30;No;05/12/2026;16:00;21:00;0;12.95
+LL005;Amira Haddad;Covent Garden;Sales Advisor;14/03/2007;Permanent;24;No;03/12/2026;16:00;21:00;0;11.20
+LL005;Amira Haddad;Covent Garden;Sales Advisor;14/03/2007;Permanent;24;No;04/12/2026;13:30;22:00;30;11.20
+LL005;Amira Haddad;Covent Garden;Sales Advisor;14/03/2007;Permanent;24;No;05/12/2026;10:00;18:30;30;11.20
+LL006;Maisie Clarke;Covent Garden;Weekend Advisor;02/06/2009;Permanent;12;No;05/12/2026;10:00;15:00;20;8.40
+LL006;Maisie Clarke;Covent Garden;Weekend Advisor;02/06/2009;Permanent;12;No;06/12/2026;12:00;16:00;0;8.40
+LL007;Ben Harris;Covent Garden;Sales Advisor;05/12/1996;Zero hours;;No;04/12/2026;16:00;21:00;0;12.71
+LL008;Tomasz Nowak;Covent Garden;Stockroom Associate;17/02/1990;Permanent;37.5;No;30/11/2026;06:00;14:00;30;13.10
+LL008;Tomasz Nowak;Covent Garden;Stockroom Associate;17/02/1990;Permanent;37.5;No;01/12/2026;06:00;14:00;30;13.10
+LL008;Tomasz Nowak;Covent Garden;Stockroom Associate;17/02/1990;Permanent;37.5;No;02/12/2026;06:00;14:00;30;13.10
+LL008;Tomasz Nowak;Covent Garden;Stockroom Associate;17/02/1990;Permanent;37.5;No;03/12/2026;22:00;06:00;30;13.10
+LL008;Tomasz Nowak;Covent Garden;Stockroom Associate;17/02/1990;Permanent;37.5;No;05/12/2026;06:00;14:00;30;13.10
+LL009;Grace Mensah;Shoreditch;Store Manager;08/10/1987;Permanent;45;Yes;30/11/2026;07:30;17:00;30;17.50
+LL009;Grace Mensah;Shoreditch;Store Manager;08/10/1987;Permanent;45;Yes;01/12/2026;07:30;17:00;30;17.50
+LL009;Grace Mensah;Shoreditch;Store Manager;08/10/1987;Permanent;45;Yes;02/12/2026;07:30;17:00;30;17.50
+LL009;Grace Mensah;Shoreditch;Store Manager;08/10/1987;Permanent;45;Yes;04/12/2026;07:30;17:00;30;17.50
+LL009;Grace Mensah;Shoreditch;Store Manager;08/10/1987;Permanent;45;Yes;05/12/2026;07:30;17:00;30;17.50
+LL010;Ellie Robinson;Shoreditch;Assistant Manager;25/04/1994;Permanent;40;No;30/11/2026;13:30;22:00;30;15.00
+LL010;Ellie Robinson;Shoreditch;Assistant Manager;25/04/1994;Permanent;40;No;01/12/2026;13:30;22:00;30;15.00
+LL010;Ellie Robinson;Shoreditch;Assistant Manager;25/04/1994;Permanent;40;No;03/12/2026;10:00;18:30;30;15.00
+LL010;Ellie Robinson;Shoreditch;Assistant Manager;25/04/1994;Permanent;40;No;04/12/2026;12:30;21:00;30;15.00
+LL010;Ellie Robinson;Shoreditch;Assistant Manager;25/04/1994;Permanent;40;No;05/12/2026;07:30;16:00;30;15.00
+LL011;Kai Thompson;Shoreditch;Sales Advisor;19/08/1999;Permanent;37.5;No;30/11/2026;10:00;18:30;30;12.85
+LL011;Kai Thompson;Shoreditch;Sales Advisor;19/08/1999;Permanent;37.5;No;01/12/2026;10:00;18:30;30;12.85
+LL011;Kai Thompson;Shoreditch;Sales Advisor;19/08/1999;Permanent;37.5;No;02/12/2026;10:00;18:30;30;12.85
+LL011;Kai Thompson;Shoreditch;Sales Advisor;19/08/1999;Permanent;37.5;No;03/12/2026;10:00;18:30;30;12.85
+LL011;Kai Thompson;Shoreditch;Sales Advisor;19/08/1999;Permanent;37.5;No;04/12/2026;16:00;20:00;0;12.85
+LL011;Kai Thompson;Shoreditch;Sales Advisor;19/08/1999;Permanent;37.5;No;05/12/2026;10:00;18:30;30;12.85
+LL012;Priya Sharma;Shoreditch;Sales Advisor;03/02/2000;Permanent;37.5;No;30/11/2026;07:30;16:00;30;12.85
+LL012;Priya Sharma;Shoreditch;Sales Advisor;03/02/2000;Permanent;37.5;No;02/12/2026;13:30;22:00;30;12.85
+LL012;Priya Sharma;Shoreditch;Sales Advisor;03/02/2000;Permanent;37.5;No;03/12/2026;13:30;22:00;30;12.85
+LL012;Priya Sharma;Shoreditch;Sales Advisor;03/02/2000;Permanent;37.5;No;04/12/2026;10:00;18:30;30;12.85
+LL012;Priya Sharma;Shoreditch;Sales Advisor;03/02/2000;Permanent;37.5;No;05/12/2026;13:30;22:00;30;12.85
+LL012;Priya Sharma;Shoreditch;Sales Advisor;03/02/2000;Permanent;37.5;No;06/12/2026;11:30;17:30;0;12.85
+LL013;Jordan Lee;Shoreditch;Sales Advisor;16/11/2005;Permanent;30;No;01/12/2026;16:00;21:00;0;11.50
+LL013;Jordan Lee;Shoreditch;Sales Advisor;16/11/2005;Permanent;30;No;03/12/2026;10:00;18:30;30;11.50
+LL013;Jordan Lee;Shoreditch;Sales Advisor;16/11/2005;Permanent;30;No;05/12/2026;10:00;18:30;30;11.50
+LL013;Jordan Lee;Shoreditch;Sales Advisor;16/11/2005;Permanent;30;No;06/12/2026;11:30;17:30;0;11.50
+LL014;Chloe Evans;Shoreditch;Visual Merchandiser;12/06/1997;Permanent;30;No;30/11/2026;10:00;18:30;30;13.40
+LL014;Chloe Evans;Shoreditch;Visual Merchandiser;12/06/1997;Permanent;30;No;01/12/2026;10:00;18:30;30;13.40
+LL014;Chloe Evans;Shoreditch;Visual Merchandiser;12/06/1997;Permanent;30;No;02/12/2026;10:00;18:30;30;13.40
+LL014;Chloe Evans;Shoreditch;Visual Merchandiser;12/06/1997;Permanent;30;No;03/12/2026;16:00;21:00;0;13.40
+LL015;Noah Bennett;Shoreditch;Sales Advisor;27/03/1995;Zero hours;;No;02/12/2026;16:00;21:00;0;12.71
+LL016;Zara Ali;Shoreditch;Sales Advisor;09/10/2002;Zero hours;;No;06/12/2026;12:00;16:00;0;12.71
+LL017;Mark Davies;Croydon;Store Manager;30/01/1985;Permanent;45;Yes;30/11/2026;07:00;16:30;30;16.90
+LL017;Mark Davies;Croydon;Store Manager;30/01/1985;Permanent;45;Yes;01/12/2026;07:00;16:30;30;16.90
+LL017;Mark Davies;Croydon;Store Manager;30/01/1985;Permanent;45;Yes;03/12/2026;07:00;16:30;30;16.90
+LL017;Mark Davies;Croydon;Store Manager;30/01/1985;Permanent;45;Yes;04/12/2026;07:00;16:30;30;16.90
+LL017;Mark Davies;Croydon;Store Manager;30/01/1985;Permanent;45;Yes;06/12/2026;10:30;17:30;0;16.90
+LL018;Fatima Begum;Croydon;Assistant Manager;14/07/1992;Permanent;40;No;30/11/2026;12:00;20:30;30;14.60
+LL018;Fatima Begum;Croydon;Assistant Manager;14/07/1992;Permanent;40;No;02/12/2026;07:30;16:00;30;14.60
+LL018;Fatima Begum;Croydon;Assistant Manager;14/07/1992;Permanent;40;No;03/12/2026;12:00;20:30;30;14.60
+LL018;Fatima Begum;Croydon;Assistant Manager;14/07/1992;Permanent;40;No;04/12/2026;12:00;20:30;30;14.60
+LL018;Fatima Begum;Croydon;Assistant Manager;14/07/1992;Permanent;40;No;05/12/2026;07:30;16:00;30;14.60
+LL019;Ryan Cooper;Croydon;Sales Advisor;22/11/1999;Permanent;37.5;No;30/11/2026;09:30;18:00;30;12.71
+LL019;Ryan Cooper;Croydon;Sales Advisor;22/11/1999;Permanent;37.5;No;01/12/2026;09:30;18:00;30;12.71
+LL019;Ryan Cooper;Croydon;Sales Advisor;22/11/1999;Permanent;37.5;No;02/12/2026;09:30;18:00;30;12.71
+LL019;Ryan Cooper;Croydon;Sales Advisor;22/11/1999;Permanent;37.5;No;04/12/2026;09:30;18:00;30;12.71
+LL019;Ryan Cooper;Croydon;Sales Advisor;22/11/1999;Permanent;37.5;No;05/12/2026;09:30;18:00;30;12.71
+LL019;Ryan Cooper;Croydon;Sales Advisor;22/11/1999;Permanent;37.5;No;06/12/2026;11:00;16:00;0;12.71
+LL020;Olivia Green;Croydon;Sales Advisor;06/05/1998;Permanent;24;No;01/12/2026;12:00;20:30;30;12.71
+LL020;Olivia Green;Croydon;Sales Advisor;06/05/1998;Permanent;24;No;03/12/2026;15:00;20:00;0;12.71
+LL021;Ethan Wright;Croydon;Apprentice Sales Advisor;10/04/2008;Apprentice;32;No;30/11/2026;09:30;18:00;30;8.00
+LL021;Ethan Wright;Croydon;Apprentice Sales Advisor;10/04/2008;Apprentice;32;No;02/12/2026;09:30;18:00;30;8.00
+LL021;Ethan Wright;Croydon;Apprentice Sales Advisor;10/04/2008;Apprentice;32;No;04/12/2026;09:30;18:00;30;8.00
+LL021;Ethan Wright;Croydon;Apprentice Sales Advisor;10/04/2008;Apprentice;32;No;05/12/2026;09:30;18:00;30;8.00
+LL022;Ruby Hughes;Croydon;Weekend Advisor;20/09/2009;Permanent;8;No;05/12/2026;10:00;14:00;0;8.00
+LL022;Ruby Hughes;Croydon;Weekend Advisor;20/09/2009;Permanent;8;No;06/12/2026;11:00;15:00;0;8.00
+LL023;Sam Patel;Croydon;Sales Advisor;01/08/1997;Zero hours;;No;03/12/2026;15:00;20:00;0;12.71
+LL024;Rahim Uddin;Covent Garden;Sales Lead;19/12/1995;Permanent;37.5;No;30/11/2026;10:00;18:30;30;14.20
+LL024;Rahim Uddin;Covent Garden;Sales Lead;19/12/1995;Permanent;37.5;No;01/12/2026;13:30;22:00;30;14.20
+LL024;Rahim Uddin;Shoreditch;Sales Lead;19/12/1995;Permanent;37.5;No;02/12/2026;07:00;15:30;30;14.20
+LL024;Rahim Uddin;Croydon;Sales Lead;19/12/1995;Permanent;37.5;No;03/12/2026;09:30;18:00;30;14.20
+LL024;Rahim Uddin;Shoreditch;Sales Lead;19/12/1995;Permanent;37.5;No;05/12/2026;10:00;18:30;30;14.20
