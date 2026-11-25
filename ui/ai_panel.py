@@ -27,11 +27,25 @@ def _cached(kind: str, key_hash: str, _fn, _args: tuple) -> str:
     return _fn(*_args)
 
 
-def generate(kind: str, payload: dict, fn, *args, extra: str = "") -> tuple[str | None, str, str | None]:
-    """Returns (text, source, error). source: claude | cached | none | limit | error."""
+SAVED_CAPTION = ("Saved example: written by Claude (Opus 5.5) on 26 Nov 2026 from this exact demo data. "
+                 "This public demo doesn't call the API, so nothing was generated just now.")
+LIVE_CAPTION = "Written by Claude just now from the verified numbers"
+TEMPLATE_CAPTION = "Template built from the verified numbers (no AI)"
+
+
+def caption_for(source: str) -> str:
+    return {"claude": LIVE_CAPTION, "cached": LIVE_CAPTION, "saved": SAVED_CAPTION}.get(source, TEMPLATE_CAPTION)
+
+
+def generate(kind: str, payload: dict, fn, *args, extra: str = "",
+             question: str | None = None) -> tuple[str | None, str, str | None]:
+    """Returns (text, source, error). source: claude | cached | saved | none | limit | error.
+
+    Without an API key, a saved example is returned when one was written for this exact payload."""
     api_key = cb.get_api_key()
     if not api_key:
-        return None, "none", None
+        saved = cb.saved_example(kind, payload, question)
+        return (saved, "saved", None) if saved else (None, "none", None)
     h = hashlib.sha256((kind + "|" + cb.payload_hash(payload) + "|" + extra).encode()).hexdigest()
     if h in _known_hashes():
         try:
@@ -58,7 +72,8 @@ def status_banner() -> bool:
         st.success(f"Claude is on (model {cb.model_id()}). {max(calls_per_session() - used, 0)} new AI requests left "
                    "in this session; repeated requests are served from cache.", icon="✅")
         return True
-    st.info("**Claude is off: no Anthropic API key is set.** You'll see a template built from the same verified "
-            "numbers. To switch Claude on, add `ANTHROPIC_API_KEY` to the app's Streamlit secrets or environment.",
-            icon="🔌")
+    st.info("**Demo mode: no live AI connection.** This public demo doesn't call the Claude API. For the built-in demo "
+            "data you'll see saved examples Claude wrote from these exact numbers; for anything else, a template built "
+            "from the same verified figures. Owners switch on live Claude by adding `ANTHROPIC_API_KEY` to the app's "
+            "secrets.", icon="💡")
     return False

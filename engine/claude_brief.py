@@ -13,6 +13,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+from functools import lru_cache
 
 import numpy as np
 import pandas as pd
@@ -68,6 +69,30 @@ def canonical_json(payload: dict) -> str:
 
 def payload_hash(payload: dict) -> str:
     return hashlib.sha256(canonical_json(payload).encode("utf-8")).hexdigest()
+
+
+SAVED_EXAMPLES_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                   "sample_data", "saved_ai_examples.json")
+
+
+@lru_cache(maxsize=1)
+def _saved_examples() -> dict:
+    try:
+        with open(SAVED_EXAMPLES_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, ValueError):
+        return {}
+    return {(e["kind"], e["payload_sha256"], e.get("question")): e["text"] for e in data.get("entries", [])}
+
+
+def saved_example(kind: str, payload: dict, question: str | None = None) -> str | None:
+    """A saved Claude-written example for exactly this payload (demo data), or None."""
+    return _saved_examples().get((kind, payload_hash(payload), question))
+
+
+def saved_questions(kind: str, payload: dict) -> list[str]:
+    h = payload_hash(payload)
+    return [q for (k, ph, q) in _saved_examples() if k == kind and ph == h and q]
 
 
 def approx_tokens(payload: dict) -> int:

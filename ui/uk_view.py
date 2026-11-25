@@ -152,6 +152,7 @@ def render() -> None:
     r = _analyse(src["hash"], tuple(sorted(mapping.items())), str(pd.Timestamp(week)), rv, premium, holiday,
                  sales_t, shifts_all)
     emp, site_tbl, tot, flags, wins, payload = r["emp"], r["sites"], r["totals"], r["flags"], r["wins"], r["payload"]
+    st.session_state["uk_payload"] = payload
     rates = RATE_TABLES[rv]
     n_breach = int((flags["severity"] == "breach").sum()) if not flags.empty else 0
     n_warn = int((flags["severity"] == "warning").sum()) if not flags.empty else 0
@@ -316,11 +317,12 @@ def render() -> None:
             text, srcname, err = ai_panel.generate("uk_brief", payload, cb.uk_brief, payload)
             if err:
                 st.warning(err)
-            st.session_state[bkey] = ("claude" if text else "template", text or cb.uk_fallback_brief(payload))
-        brief_src, brief = st.session_state.get(bkey, ("template", cb.uk_fallback_brief(payload)))
+            st.session_state[bkey] = (srcname if text else "template", text or cb.uk_fallback_brief(payload))
+        saved = cb.saved_example("uk_brief", payload) if not cb.get_api_key() else None
+        default = ("saved", saved) if saved else ("template", cb.uk_fallback_brief(payload))
+        brief_src, brief = st.session_state.get(bkey, default)
         with st.container(border=True):
-            st.caption("Written by Claude from the verified numbers" if brief_src == "claude"
-                       else "Template brief built from the verified numbers")
+            st.caption(ai_panel.caption_for(brief_src))
             st.markdown(brief)
         pack, meta = audit.build_pack(r["shifts"], emp, flags, brief, rates, src["bytes"], src["name"], brief_src, premium)
         c1, c2 = st.columns(2)

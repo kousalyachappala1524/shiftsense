@@ -329,6 +329,7 @@ def render() -> None:
     with tab_ai:
         ctx = cb.build_india_payload(store_name, labels[wi], plan, fcst, rules.as_dict(),
                                      st.session_state.get("in_lc_totals"), scenario)
+        st.session_state["in_ctx"] = ctx
         ctx_key = f"{data_key}|{store['store_id']}|{week_start.date()}|{rules_t}"
         if st.session_state.get("in_ctx_key") != ctx_key:
             st.session_state.update(in_ctx_key=ctx_key, in_chat=[], in_report=None)
@@ -341,10 +342,11 @@ def render() -> None:
                 text, src, err = ai_panel.generate("india_report", ctx, cb.india_report, ctx)
                 if err:
                     st.warning(err)
-                st.session_state["in_report"] = (src, text or cb.india_offline_report(ctx))
+                st.session_state["in_report"] = (src if text else "template", text or cb.india_offline_report(ctx))
             if st.session_state.get("in_report"):
                 src, text = st.session_state["in_report"]
                 with st.container(border=True):
+                    st.caption(ai_panel.caption_for(src))
                     st.markdown(text)
                 st.download_button("Download report (.md)", text.encode("utf-8"),
                                    f"weekly_report_{store['store_id']}_{week_start:%Y%m%d}.md", "text/markdown")
@@ -354,28 +356,36 @@ def render() -> None:
             suggestions = ["Why are we short-staffed, and when?",
                            "Where can we cut labour cost without hurting coverage?",
                            "Which shifts need women's night-work consent?"]
+            saved_qs = [] if has_key else cb.saved_questions("india_ask", ctx)
             picked = None
             for i, s in enumerate(suggestions):
-                if st.button(s, key=f"in_sugg{i}", disabled=not has_key, type="tertiary", icon=":material/chat:"):
+                if st.button(s, key=f"in_sugg{i}", disabled=not (has_key or s in saved_qs), type="tertiary",
+                             icon=":material/chat:"):
                     picked = s
             box = st.container(height=360, border=True)
             if not st.session_state["in_chat"] and not has_key:
-                box.caption("Once an API key is set, ask things like “Which hours on Saturday are short, and who could "
-                            "cover them?”. Claude answers from the plan data only.")
+                box.caption("Demo mode: click a suggested question to see the answer Claude saved for this demo data. "
+                            "Typing your own questions needs a live API key."
+                            if saved_qs else
+                            "Typing questions needs a live API key. Saved example answers exist only for the default "
+                            "demo view.")
             for m in st.session_state["in_chat"]:
                 box.chat_message(m["role"]).markdown(m["content"])
-            q = st.chat_input("Ask about this week's plan..." if has_key else "Add an API key to ask questions",
+            q = st.chat_input("Ask about this week's plan..." if has_key else "Live questions need an API key",
                               disabled=not has_key, key="in_chat_input")
             q = q or picked
-            if q and has_key:
-                box.chat_message("user").markdown(q)
+            if q:
                 hist = st.session_state["in_chat"]
                 text, src, err = ai_panel.generate("india_ask", ctx, cb.india_ask, ctx, hist, q,
-                                                   extra=q + "|" + str(len(hist)))
+                                                   extra=q + "|" + str(len(hist)), question=q)
                 if err:
                     box.warning(err)
                 if text:
-                    box.chat_message("assistant").markdown(text)
+                    box.chat_message("user").markdown(q)
+                    with box.chat_message("assistant"):
+                        if src == "saved":
+                            st.caption(ai_panel.SAVED_CAPTION)
+                        st.markdown(text)
                     st.session_state["in_chat"] += [{"role": "user", "content": q}, {"role": "assistant", "content": text}]
         with st.expander(f"What Claude sees (about {cb.approx_tokens(ctx)} tokens of verified numbers)"):
             st.json(ctx, expanded=False)

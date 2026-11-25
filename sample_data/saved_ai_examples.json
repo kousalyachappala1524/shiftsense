@@ -1,0 +1,369 @@
+{
+ "about": "Examples written by Claude (Opus 5.5) on 26 Nov 2026 from the exact verified payloads below, for the public demo, which runs without a live API key. The app shows an example only when the payload's SHA-256 matches. If the payload format changes, tests/test_saved_examples.py fails and the examples must be rewritten.",
+ "written": "2026-11-26",
+ "model": "claude-opus-5-5",
+ "payloads": {
+  "uk": {
+   "currency": "GBP",
+   "week_commencing": "30 Nov 2026",
+   "rate_table": "2026-27",
+   "overtime_premium_policy": 1.5,
+   "totals": {
+    "paid_hours": 689.67,
+    "gross_pay": 9682.94,
+    "base_pay": 9488.77,
+    "overtime_premium_pay": 165.02,
+    "holiday_pay": 29.15,
+    "employer_ni": 1087.24,
+    "loaded_cost": 10770.18,
+    "sales": 99000.0,
+    "labour_cost_pct": 10.88,
+    "headcount": 24,
+    "nmw_breaches": 1,
+    "ssp_exposure_one_week_all_staff": 2544.46
+   },
+   "sites": [
+    {
+     "site": "Covent Garden",
+     "paid_hours": 239.7,
+     "wage_bill": 3377.06,
+     "employer_ni": 371.91,
+     "loaded_cost": 3748.97,
+     "sales": 42000.0,
+     "labour_cost_pct": 8.93
+    },
+    {
+     "site": "Croydon",
+     "paid_hours": 194.0,
+     "wage_bill": 2603.91,
+     "employer_ni": 271.41,
+     "loaded_cost": 2875.32,
+     "sales": 24000.0,
+     "labour_cost_pct": 11.98
+    },
+    {
+     "site": "Shoreditch",
+     "paid_hours": 256.0,
+     "wage_bill": 3701.97,
+     "employer_ni": 443.91,
+     "loaded_cost": 4145.88,
+     "sales": 33000.0,
+     "labour_cost_pct": 12.56
+    }
+   ],
+   "compliance": {
+    "breaches": 4,
+    "warnings": 0,
+    "nmw_breaches": [
+     {
+      "who": "Jordan Lee",
+      "paid_rate": 11.5,
+      "minimum": 12.71,
+      "band": "National Living Wage (21+)"
+     }
+    ],
+    "issues": [
+     {
+      "who": "Ellie Robinson",
+      "site": "Shoreditch",
+      "rule": "Daily rest (clopening)",
+      "severity": "breach",
+      "when": "Sat 05 Dec 07:30",
+      "detail": "Only 10.5h rest between finishing Fri 04 Dec 21:00 and starting Sat 05 Dec 07:30 (Shoreditch); adults need 11h"
+     },
+     {
+      "who": "Maisie Clarke",
+      "site": "Covent Garden",
+      "rule": "Rest break",
+      "severity": "breach",
+      "when": "Sat 05 Dec 10:00",
+      "detail": "4.7h worked with a 20-min break; under-18s need 30 min after 4.5h"
+     },
+     {
+      "who": "Mark Davies",
+      "site": "Croydon",
+      "rule": "Rest break",
+      "severity": "breach",
+      "when": "Sun 06 Dec 10:30",
+      "detail": "7.0h worked with a 0-min break; adults need 20 min after 6h"
+     },
+     {
+      "who": "Rahim Uddin",
+      "site": "Shoreditch",
+      "rule": "Daily rest (clopening)",
+      "severity": "breach",
+      "when": "Wed 02 Dec 07:00",
+      "detail": "Only 9.0h rest between finishing Tue 01 Dec 22:00 and starting Wed 02 Dec 07:00 (Covent Garden → Shoreditch); adults need 11h"
+     },
+     {
+      "who": "Tomasz Nowak",
+      "site": "Covent Garden",
+      "rule": "Night shift",
+      "severity": "info",
+      "when": "Thu 03 Dec 22:00",
+      "detail": "7.0h between 23:00 and 06:00: track as night work (8-hour average limit, health assessment)"
+     }
+    ]
+   },
+   "fixes_before_publishing": [
+    {
+     "who": "Ellie Robinson",
+     "action": "Start Ellie Robinson's shift at 08:00 instead of 07:30 and cover the first 0.5h with someone else",
+     "cost_change_week": 0.0
+    },
+    {
+     "who": "Maisie Clarke",
+     "action": "Give Maisie Clarke a 30-minute break on Sat 05 Dec 10:00–15:00 (10 more minutes, unpaid)",
+     "cost_change_week": -1.4
+    },
+    {
+     "who": "Mark Davies",
+     "action": "Give Mark Davies a 20-minute break on Sun 06 Dec 10:30–17:30 (20 more minutes, unpaid)",
+     "cost_change_week": -5.63
+    },
+    {
+     "who": "Rahim Uddin",
+     "action": "Give the Wed 02 Dec 07:00–15:30 shift at Shoreditch to Zara Ali",
+     "cost_change_week": -25.86
+    },
+    {
+     "who": "Jordan Lee",
+     "action": "Raise Jordan Lee's rate from £11.50 to £12.71 (National Living Wage (21+)) and check back pay",
+     "cost_change_week": 32.67
+    }
+   ],
+   "top_savings": [
+    {
+     "action": "Give Priya Sharma's Mon 30 Nov 07:30–16:00 shift at Shoreditch to Zara Ali: removes 8.0 overtime hours paid at 1.5×, within Zara Ali's contract and rest rules.",
+     "saving_week": 52.14,
+     "ni_part": 11.89
+    },
+    {
+     "action": "Give Ryan Cooper's Sun 06 Dec 11:00–16:00 shift at Croydon to Olivia Green: removes 5.0 overtime hours paid at 1.5×, within Olivia Green's contract and rest rules.",
+     "saving_week": 36.53,
+     "ni_part": 4.76
+    },
+    {
+     "action": "Give Kai Thompson's Fri 04 Dec 16:00–20:00 shift at Shoreditch to Noah Bennett: removes 4.0 overtime hours paid at 1.5×, within Noah Bennett's contract and rest rules.",
+     "saving_week": 26.85,
+     "ni_part": 6.73
+    }
+   ],
+   "total_saving_week": 115.52,
+   "total_saving_month": 500.59
+  },
+  "india": {
+   "store": "Bengaluru - Indiranagar",
+   "week": "Week 1 · 16 Nov – 22 Nov 2026",
+   "rules": {
+    "customers_per_staff_hour": 10.0,
+    "min_staff": 3,
+    "max_shift_hours": 9,
+    "overtime_multiplier": 2.0
+   },
+   "kpis": {
+    "forecast_sales_inr": 1579637.0,
+    "forecast_footfall": 5138.8,
+    "required_hours": 557.0,
+    "scheduled_hours": 652.0,
+    "labour_cost_inr": 146236.0,
+    "labour_cost_pct": 9.3,
+    "sales_per_labour_hour_inr": 2422.8,
+    "contract_utilisation_pct": 98.8,
+    "coverage_pct": 98.9,
+    "understaffed_hours": 6.0,
+    "overstaffed_hours": 101.0,
+    "overtime_hours": 2.0,
+    "unused_contract_hours": 10.0,
+    "headcount": 17
+   },
+   "normal_week": {
+    "footfall": 5139,
+    "sales_inr": 1579637
+   },
+   "daily": [
+    {
+     "Day": "Mon",
+     "Event": "",
+     "Footfall": 564,
+     "Sales (INR)": 166782,
+     "Required hrs": 64,
+     "Scheduled hrs": 79,
+     "Short hrs": 0,
+     "Over hrs": 15,
+     "Labour cost %": 10.0
+    },
+    {
+     "Day": "Tue",
+     "Event": "",
+     "Footfall": 553,
+     "Sales (INR)": 167961,
+     "Required hrs": 63,
+     "Scheduled hrs": 79,
+     "Short hrs": 0,
+     "Over hrs": 16,
+     "Labour cost %": 11.6
+    },
+    {
+     "Day": "Wed",
+     "Event": "",
+     "Footfall": 613,
+     "Sales (INR)": 191365,
+     "Required hrs": 67,
+     "Scheduled hrs": 84,
+     "Short hrs": 0,
+     "Over hrs": 17,
+     "Labour cost %": 10.4
+    },
+    {
+     "Day": "Thu",
+     "Event": "",
+     "Footfall": 643,
+     "Sales (INR)": 195332,
+     "Required hrs": 69,
+     "Scheduled hrs": 82,
+     "Short hrs": 0,
+     "Over hrs": 13,
+     "Labour cost %": 9.2
+    },
+    {
+     "Day": "Fri",
+     "Event": "",
+     "Footfall": 741,
+     "Sales (INR)": 216101,
+     "Required hrs": 81,
+     "Scheduled hrs": 98,
+     "Short hrs": 1,
+     "Over hrs": 18,
+     "Labour cost %": 10.5
+    },
+    {
+     "Day": "Sat",
+     "Event": "",
+     "Footfall": 1003,
+     "Sales (INR)": 307908,
+     "Required hrs": 105,
+     "Scheduled hrs": 118,
+     "Short hrs": 1,
+     "Over hrs": 14,
+     "Labour cost %": 8.2
+    },
+    {
+     "Day": "Sun",
+     "Event": "",
+     "Footfall": 1021,
+     "Sales (INR)": 334189,
+     "Required hrs": 108,
+     "Scheduled hrs": 112,
+     "Short hrs": 4,
+     "Over hrs": 8,
+     "Labour cost %": 7.3
+    }
+   ],
+   "short_slots_top10": [
+    {
+     "day": "Sun",
+     "hour": "21:00",
+     "short_by": 2
+    },
+    {
+     "day": "Fri",
+     "hour": "20:00",
+     "short_by": 1
+    },
+    {
+     "day": "Sat",
+     "hour": "21:00",
+     "short_by": 1
+    },
+    {
+     "day": "Sun",
+     "hour": "11:00",
+     "short_by": 1
+    },
+    {
+     "day": "Sun",
+     "hour": "20:00",
+     "short_by": 1
+    }
+   ],
+   "rota_alerts": [
+    "Fri: 1 staff-hours short (20:00–21:00)",
+    "Sat: 1 staff-hours short (21:00–22:00)",
+    "Sun: 4 staff-hours short (11:00–12:00, 20:00–22:00)"
+   ],
+   "notable_staff": [
+    {
+     "name": "Dev B.",
+     "role": "Cashier",
+     "contract": 24.0,
+     "scheduled": 26.0,
+     "overtime": 2.0
+    }
+   ],
+   "forecast_error_pct": {
+    "daily_footfall_mape": 6.1,
+    "daily_sales_mape": 10.1
+   },
+   "labour_codes": {
+    "state": "Karnataka",
+    "daily_limit_hours": 9.0,
+    "weekly_limit_hours": 48,
+    "ot_quarter_cap_hours": 50.0,
+    "breaches": 0,
+    "warnings": 0,
+    "women_night_work_rule": "work after 19:00 or before 06:00 needs written consent and safe transport",
+    "women_night_shift_reminders": 43,
+    "women_needing_consent": 10,
+    "overtime_hours": 0.0,
+    "overtime_pay_inr": 0,
+    "staff_over_quarter_cap": 0
+   },
+   "what_if": {
+    "footfall_change_pct": 20,
+    "required_hours": 660.0,
+    "coverage_pct": 95.2,
+    "overtime_hours": 21.0,
+    "labour_cost_pct": 8.1,
+    "recommendation": "The current team can't absorb this. Book about **32 extra staff-hours** of part-time or agency cover, mainly Sat (9h), Sun (8h), Fri (6h), or accept slower service at peaks."
+   }
+  }
+ },
+ "entries": [
+  {
+   "kind": "uk_brief",
+   "payload": "uk",
+   "payload_sha256": "5c007917fe8de22c7781fdd4d35621c49be687d8a7808b0058afab4a974a6aa7",
+   "question": null,
+   "text": "#### Executive summary\n- The rota for the week commencing 30 Nov 2026 has 4 Working Time breaches and 1 minimum wage breach to fix before it goes out.\n- Loaded labour cost is £10,770.18 for 24 staff and 689.67 paid hours: 10.88% of sales, including £1,087.24 of Employer NI.\n- Three overtime shift moves would save £115.52 a week (£500.59 a month) without breaking a contract or rest rule.\n\n#### Legal & Working Time breaches to fix before publishing the rota\n- **Rahim Uddin**, Wed 02 Dec 07:00: finishes at Covent Garden at 22:00 on Tue 01 Dec and opens Shoreditch with only 9.0h rest (adults need 11h). Fix: give the Wed 02 Dec 07:00–15:30 Shoreditch shift to Zara Ali, which also saves £25.86 a week.\n- **Ellie Robinson**, Shoreditch, Sat 05 Dec 07:30: only 10.5h rest after finishing at 21:00 on Fri 04 Dec. Fix: start at 08:00 and cover the first 0.5h with someone else.\n- **Mark Davies**, Croydon, Sun 06 Dec 10:30: 7.0h worked with no break. Fix: a 20-minute unpaid break (saves £5.63).\n- **Maisie Clarke** (under 18), Covent Garden, Sat 05 Dec 10:00: 4.7h worked with a 20-min break; under-18s need 30 minutes. Fix: 10 more minutes of break (saves £1.40).\n- **Jordan Lee** is paid £11.50 an hour against the National Living Wage (21+) of £12.71. Fix: raise the rate and check back pay (adds £32.67 this week).\n\n#### Employer NI & margin savings\n1. Priya Sharma's Mon 30 Nov 07:30–16:00 Shoreditch shift to Zara Ali: £52.14 a week (£11.89 of it Employer NI).\n2. Ryan Cooper's Sun 06 Dec 11:00–16:00 Croydon shift to Olivia Green: £36.53 a week (£4.76 NI).\n3. Kai Thompson's Fri 04 Dec 16:00–20:00 Shoreditch shift to Noah Bennett: £26.85 a week (£6.73 NI).\n\nTogether: £115.52 a week, £500.59 a month. Each move removes overtime paid at 1.5× and keeps the colleague within contract and rest rules.\n\n#### Next week watch-outs\n- Shoreditch has the highest labour cost at 12.56% of sales (Croydon 11.98%, Covent Garden 8.93%) and two of the three savings.\n- Tomasz Nowak's overnight stock-take (Thu 03 Dec 22:00) is 7.0h of night work: track it against the 8-hour average limit.\n- Day-one sick pay exposure is £2,544.46 if every employee were off for a week."
+  },
+  {
+   "kind": "india_report",
+   "payload": "india",
+   "payload_sha256": "2d3b819aa32956828c7d523b1ff694663279a6f12cd50461095215932e7f1fa9",
+   "question": null,
+   "text": "#### Headline\nBengaluru – Indiranagar is forecast at ₹15.8 L sales and 5,139 visitors for 16–22 Nov, the same as a normal week, and the rota covers 98.9% of required hours at 9.3% labour cost. Priority: close the 4 short staff-hours on Sunday (11:00–12:00 and 20:00–22:00).\n\n#### Demand outlook\n- No events this week. Demand builds towards the weekend: Saturday 1,003 visitors (₹3,07,908) and Sunday 1,021 (₹3,34,189), against 553–564 on Monday and Tuesday.\n- The forecast's back-tested error is 6.1% a day for footfall and 10.1% for sales.\n\n#### Staffing & coverage\n- Coverage is 98.9%. The 6 short staff-hours all sit at the edges of the day: Sunday 11:00–12:00 and 20:00–22:00 (21:00 is short by 2 people), Saturday 21:00–22:00 and Friday 20:00–21:00.\n- 101 staff-hours sit above need, 13–18 a day from Monday to Friday.\n- Contract utilisation is 98.8% across 17 staff; only Dev B. (Cashier) is over contract, by 2 hours.\n\n#### Cost & compliance\n- Labour cost is ₹1.46 L, 9.3% of sales, with ₹2,423 of sales per labour hour.\n- The busiest days are the most efficient: Sunday 7.3% and Saturday 8.2%. Tuesday is the most expensive at 11.6%.\n- Labour Codes (Karnataka): 0 breaches and 0 overtime warnings against the 9-hour daily limit and 50-hour quarterly overtime cap. 43 shifts run past 19:00 for 10 women, so each of them needs written consent and safe transport on record.\n\n#### Actions for the store manager\n1. Move one or two weekday shifts to finish at closing on Friday to Sunday, and start someone at 11:00 on Sunday. That closes the 6 short hours using over-covered weekday time instead of new hours.\n2. Collect written consent and confirm transport for the 10 women working after 19:00 before the rota is published.\n3. Plan peak cover now: if footfall runs 20% above forecast, the plan needs about 32 extra staff-hours, mainly Saturday (9h), Sunday (8h) and Friday (6h)."
+  },
+  {
+   "kind": "india_ask",
+   "payload": "india",
+   "payload_sha256": "2d3b819aa32956828c7d523b1ff694663279a6f12cd50461095215932e7f1fa9",
+   "question": "Why are we short-staffed, and when?",
+   "text": "We're only 6 staff-hours short this week (coverage 98.9%), and every gap is at the start or end of the trading day:\n\n- **Sunday:** 4 hours, 11:00–12:00 and 20:00–22:00 (21:00 is short by 2 people)\n- **Saturday:** 1 hour, 21:00–22:00\n- **Friday:** 1 hour, 20:00–21:00\n\n**Why:** the weekend is the busiest part of the week (Saturday 1,003 and Sunday 1,021 visitors, against 553–741 on weekdays), and late evenings need closers after most shifts have ended. Meanwhile 101 staff-hours sit above need, 13–18 a day on weekdays.\n\n**Action:** move one or two weekday shifts to finish at closing on Friday to Sunday, and start someone at 11:00 on Sunday. That closes the gap without adding hours."
+  },
+  {
+   "kind": "india_ask",
+   "payload": "india",
+   "payload_sha256": "2d3b819aa32956828c7d523b1ff694663279a6f12cd50461095215932e7f1fa9",
+   "question": "Where can we cut labour cost without hurting coverage?",
+   "text": "The opportunity is the 101 over-covered staff-hours on weekdays, not the weekend.\n\n- Monday to Friday each carry 13–18 hours above need. Tuesday has the highest labour cost at 11.6% of sales (Monday 10.0%, Wednesday 10.4%, Friday 10.5%).\n- The weekend is already efficient: Sunday 7.3%, Saturday 8.2%.\n- Overtime is minimal: only Dev B. (Cashier) is 2 hours over contract.\n\nContract utilisation is 98.8%, so most of that surplus is contracted time rather than extra spend. Two levers:\n\n1. Move weekday hours into the 6 short hours on Friday to Sunday evenings instead of paying for extra cover. That raises coverage rather than lowering it.\n2. At the next contract review, look at part-time hours from Monday to Thursday."
+  },
+  {
+   "kind": "india_ask",
+   "payload": "india",
+   "payload_sha256": "2d3b819aa32956828c7d523b1ff694663279a6f12cd50461095215932e7f1fa9",
+   "question": "Which shifts need women's night-work consent?",
+   "text": "Under the Labour Codes in Karnataka, 43 shifts this week run past 19:00 for 10 women. Each of those 10 needs her written consent, plus the store's safety and transport arrangements, on record before the rota goes out.\n\nThe plan data I'm given holds only those counts, not names or shift times. The full list, one row per person with her late shifts, is in the **Labour Codes** tab under *Findings*.\n\nThere are no other Labour Codes issues this week: 0 breaches and 0 overtime warnings against the 9-hour daily limit and the 50-hour quarterly overtime cap."
+  }
+ ]
+}

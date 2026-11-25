@@ -25,6 +25,9 @@
 7. **Testing gate.** After any change to `engine/` or `config/`, run `pytest -v` and confirm 100% pass before
    finishing. Lint with `python -m pyflakes app.py ui engine config tests` (zero unused imports).
 
+## Saved AI examples (free public demo)
+`sample_data/saved_ai_examples.json` holds Claude-written examples keyed by the SHA-256 of the demo payloads. If a change alters those payloads, `tests/test_saved_examples.py` fails: rewrite the examples from the new payload (only figures present in it) and update the hashes. Never present a saved example as live output.
+
 ## Updating statutory rates
 - UK: add a new `UKRates` instance in `config/uk_rates.py` (minimum wage changes 1 April, NI/SSP 6 April),
   add it to `RATE_TABLES`, cite the GOV.UK source in the module docstring, and add boundary tests.

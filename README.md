@@ -140,7 +140,7 @@ pytest -v
 
 ### Switch on Claude (optional)
 
-Get an API key from the [Anthropic Console](https://console.anthropic.com/) and either copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml` (git-ignored) and paste it there, or set the `ANTHROPIC_API_KEY` environment variable. The key is never read from anywhere else, never shown, and never logged. Without a key every screen still works, with a template brief built from the same numbers.
+Get an API key from the [Anthropic Console](https://console.anthropic.com/) and either copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml` (git-ignored) and paste it there, or set the `ANTHROPIC_API_KEY` environment variable. The key is never read from anywhere else, never shown, and never logged. Without a key every screen still works: for the built-in demo data the app shows saved examples Claude wrote from the exact same numbers (`sample_data/saved_ai_examples.json`, clearly labelled as saved), and for any other data a template brief built from the verified figures. So the public demo costs nothing to run.
 
 Cost controls: Claude is called only when someone clicks a button; identical requests are served from cache (keyed by a SHA-256 of the payload); each visitor session gets `AI_CALLS_PER_SESSION` new calls (default 5). Also set a monthly spend limit in the Anthropic Console.
 

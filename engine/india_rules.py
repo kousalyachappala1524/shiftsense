@@ -93,6 +93,7 @@ def check(shifts: pd.DataFrame, preset: IndiaPreset) -> tuple[pd.DataFrame, pd.D
         "ot_quarter_cap_hours": preset.ot_quarter_cap,
         "breaches": int((f["severity"] == BREACH).sum()) if not f.empty else 0,
         "warnings": int((f["severity"] == WARNING).sum()) if not f.empty else 0,
+        "women_night_work_rule": "work after 19:00 or before 06:00 needs written consent and safe transport",
         "women_night_shift_reminders": int(f.loc[f["rule"] == "Women's night work", "shifts"].sum()) if not f.empty else 0,
         "women_needing_consent": int((f["rule"] == "Women's night work").sum()) if not f.empty else 0,
         "overtime_hours": round(float(p["overtime_hours"].sum()), 1),
