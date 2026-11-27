@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import io
+import re
 
 import pandas as pd
 import streamlit as st
@@ -146,7 +147,7 @@ def render() -> None:
                             width="stretch", key="in_chart1")
         with right:
             st.markdown("#### What needs attention")
-            notes = list(rota["alerts"])
+            notes = [re.sub(r"\b1 staff-hours\b", "1 staff-hour", a) for a in rota["alerts"]]
             ot = rota["staff"].query("overtime_hours > 0").sort_values("overtime_hours", ascending=False)
             if len(ot):
                 notes.append(f"Overtime: {', '.join(f'{r.name} ({r.overtime_hours:.0f}h)' for r in ot.head(3).itertuples())}")

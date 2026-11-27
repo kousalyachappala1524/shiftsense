@@ -10,8 +10,9 @@ from ui import common, india_view, uk_view
 
 common.setup_page()
 
-MODES = {"india": "India mode (2026 Labour Codes & state OT caps)",
-         "uk": "UK mode (2026/27 NLW, 15% NI & WTR)"}
+# Short enough that both options sit on one line on a phone.
+MODES = {"india": "India · 2026 Labour Codes",
+         "uk": "UK · NLW, NI & WTR"}
 
 st.markdown(f"# {common.APP}")
 initial = st.query_params.get("mode", "india")

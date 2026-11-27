@@ -24,6 +24,15 @@ CSS = f"""
   .ss-note {{color:{SLATE}; font-size:0.85rem;}}
   .ss-hero {{border:1px solid {LINE}; border-radius:14px; padding:22px 24px; background:#fff;}}
   .ss-pill-red {{color:{RED}; font-weight:600;}}
+  /* Phones: KPI tiles two per row instead of one long column. */
+  @media (max-width: 640px) {{
+    [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] > [data-testid="stVerticalBlock"] > [data-testid="stElementContainer"] > [data-testid="stMetric"]) {{
+      flex-direction: row !important; flex-wrap: wrap !important; gap: 0.6rem !important;}}
+    [data-testid="stHorizontalBlock"]:has(> [data-testid="stColumn"] > [data-testid="stVerticalBlock"] > [data-testid="stElementContainer"] > [data-testid="stMetric"]) > [data-testid="stColumn"] {{
+      width: calc(50% - 0.3rem) !important; flex: 0 0 calc(50% - 0.3rem) !important; min-width: 0 !important;}}
+    [data-testid="stMetric"] {{padding: 10px 12px;}}
+    [data-testid="stMetricValue"] {{font-size: 1.2rem;}}
+  }}
 </style>"""
 
 

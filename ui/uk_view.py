@@ -184,14 +184,15 @@ def render() -> None:
         with left:
             st.markdown("#### Cost by site this week")
             st.plotly_chart(charts.site_cost_bars(site_tbl), width="stretch", key="uk_chart_sites")
-            st.dataframe(site_tbl[["site", "headcount", "paid_hours", "gross_pay", "employer_ni", "loaded_cost", "sales",
-                                   "labour_cost_pct"]], hide_index=True, width="stretch", column_config={
-                "site": "Site", "headcount": "Staff", "paid_hours": "Paid hrs",
-                "gross_pay": st.column_config.NumberColumn("Pay", format="£%.2f"),
-                "employer_ni": st.column_config.NumberColumn("Employer NI", format="£%.2f"),
-                "loaded_cost": st.column_config.NumberColumn("Loaded cost", format="£%.2f"),
-                "sales": st.column_config.NumberColumn("Sales", format="£%.0f"),
-                "labour_cost_pct": st.column_config.NumberColumn("Labour %", format="%.1f%%")})
+            site_show = site_tbl[["site", "headcount", "paid_hours", "gross_pay", "employer_ni", "loaded_cost", "sales",
+                                  "labour_cost_pct"]]
+            st.dataframe(site_show.style.format({
+                "paid_hours": "{:,.1f}", "gross_pay": "£{:,.2f}", "employer_ni": "£{:,.2f}",
+                "loaded_cost": "£{:,.2f}", "sales": "£{:,.0f}", "labour_cost_pct": "{:.1f}%"}, na_rep="–"),
+                hide_index=True, width="stretch", column_config={
+                "site": "Site", "headcount": "Staff", "paid_hours": "Paid hrs", "gross_pay": "Pay",
+                "employer_ni": "Employer NI", "loaded_cost": "Loaded cost", "sales": "Sales",
+                "labour_cost_pct": "Labour %"})
         with right:
             st.markdown("#### Fix before publishing")
             fixes = wins["compliance_fixes"]
@@ -250,19 +251,24 @@ def render() -> None:
     # ---------------------------------------------------------- cost
     with tabs[2]:
         st.markdown("#### True cost per person this week")
-        st.dataframe(emp[["employee_name", "sites", "age_band", "contract_type", "hourly_rate", "paid_hours",
-                          "contracted_hours", "overtime_hours", "base_pay", "overtime_premium_pay", "holiday_pay",
-                          "employer_ni", "loaded_cost", "loaded_hourly_cost", "nmw_breach"]],
+        emp_show = emp[["employee_name", "sites", "age_band", "contract_type", "hourly_rate", "paid_hours",
+                        "contracted_hours", "overtime_hours", "base_pay", "overtime_premium_pay", "holiday_pay",
+                        "employer_ni", "loaded_cost", "loaded_hourly_cost", "nmw_breach"]].copy()
+        emp_show["contract_type"] = emp_show["contract_type"].astype(str).str.replace("_", " ")
+        # Blank contracted hours (irregular / zero-hours) show as a dash, not "None".
+        emp_show["contracted_hours"] = emp_show["contracted_hours"].map(lambda v: "–" if pd.isna(v) else f"{v:g}")
+        money_cols = ["hourly_rate", "base_pay", "overtime_premium_pay", "holiday_pay", "employer_ni", "loaded_cost",
+                      "loaded_hourly_cost"]
+        st.dataframe(emp_show.style.format({**{c: "£{:,.2f}" for c in money_cols},
+                                            "paid_hours": "{:g}", "overtime_hours": "{:g}"}),
                      hide_index=True, width="stretch", column_config={
-            "employee_name": "Employee", "sites": "Site(s)", "age_band": "Age", "contract_type": "Contract",
-            "hourly_rate": st.column_config.NumberColumn("Rate", format="£%.2f"),
-            "paid_hours": "Paid hrs", "contracted_hours": "Contract hrs", "overtime_hours": "OT hrs",
-            "base_pay": st.column_config.NumberColumn("Base pay", format="£%.2f"),
-            "overtime_premium_pay": st.column_config.NumberColumn("OT premium", format="£%.2f"),
-            "holiday_pay": st.column_config.NumberColumn("Holiday 12.07%", format="£%.2f"),
-            "employer_ni": st.column_config.NumberColumn("Employer NI", format="£%.2f"),
-            "loaded_cost": st.column_config.NumberColumn("Loaded cost", format="£%.2f"),
-            "loaded_hourly_cost": st.column_config.NumberColumn("Loaded £/hr", format="£%.2f"),
+            "employee_name": "Employee", "sites": "Site(s)", "age_band": "Age",
+            "contract_type": st.column_config.TextColumn("Contract", width="medium"),
+            "hourly_rate": "Rate", "paid_hours": "Paid hrs",
+            "contracted_hours": st.column_config.TextColumn("Contract hrs", alignment="right"),
+            "overtime_hours": "OT hrs",
+            "base_pay": "Base pay", "overtime_premium_pay": "OT premium", "holiday_pay": "Holiday 12.07%",
+            "employer_ni": "Employer NI", "loaded_cost": "Loaded cost", "loaded_hourly_cost": "Loaded £/hr",
             "nmw_breach": st.column_config.CheckboxColumn("Below min wage")})
         c = st.columns(3)
         c[0].metric("Holiday accrual (irregular hours)", f"£{tot['holiday_pay']:,.2f}")

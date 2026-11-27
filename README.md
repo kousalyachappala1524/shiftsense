@@ -181,6 +181,7 @@ Cost controls: Claude is called only when someone clicks a button; identical req
    Optional: `CONTACT_EMAIL = "you@example.com"` shows the Multi-site Pro waitlist button (it opens an email to you), or `WAITLIST_URL = "https://your-form-link"` points it at a form. Without either, the button is hidden.
 4. Click **Deploy** (first build 2–4 minutes). Share `https://<subdomain>.streamlit.app`, or `…/?mode=uk` for UK buyers.
 5. Before every interview or outreach: open the link in a private window, click **Load 3-Site UK Retail Demo**, and check it renders without errors. Free apps sleep when idle and take a moment to wake.
+6. `.github/workflows/keep-awake.yml` opens the demo every 6 hours with a headless browser (`scripts/keep_awake.py`) and clicks Streamlit's wake button if the app is asleep, so a recruiter's first click lands on the app. GitHub pauses scheduled workflows after 60 days without commits to the repo; re-enable it from the Actions tab if that happens.
 
 ## Statutory sources (checked November 2026)
 
